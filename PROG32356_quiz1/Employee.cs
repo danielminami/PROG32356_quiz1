@@ -23,7 +23,9 @@ namespace InheritanceApp
             EmpType = empType;
         }
 
-        public string PrintEmployee()
+        //Using 'virtual' keyword to allow derived classes to be overridden // is it the same as being abstract?
+        //Similar but the class
+        public virtual string PrintEmployee()
         {
             return ("Employee Number: " + EmpNum +
                     "\nEmployee Name: " + EmpFname + " " + EmpLname +
