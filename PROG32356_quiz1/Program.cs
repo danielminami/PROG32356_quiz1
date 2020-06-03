@@ -10,11 +10,11 @@ namespace InheritanceApp
         static void Main(string[] args) {
             
             // should i finsih this ? GO AHEAD! heheheh 
-            Employee EMP = new Employee();
-            EMP_NUM = "123456";
+            //Employee EMP = new Employee();
+/*            EMP_NUM = "123456";
             EMP_LNAME = "buttercup";
             EMP_FNAME = "bubbles";
-            EMP_TYPE = "manager";
+            EMP_TYPE = "manager";*/
 
         }
 

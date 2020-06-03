@@ -6,11 +6,29 @@ using System.Threading.Tasks;
 
 namespace InheritanceApp
 {
-    class Employee
+    public class Employee
     {
-        public long EMP_NUM;
-        public string EMP_LNAME;
-        public string EMP_FNAME;
-        public string EMP_TYPE;
+        public long EmpNum { get => EmpNum; set => EmpNum = value; }
+        public string EmpFname { get => EmpFname; set => EmpFname = value; }
+        public string EmpLname { get => EmpLname; set => EmpLname = value; }
+        public string EmpType { get => EmpType; set => EmpType = value; }
+
+        public Employee() { }
+
+        public Employee(long empNum, string empFname, string empLname, string empType)
+        {
+            EmpNum = empNum;
+            EmpFname = empFname;
+            EmpLname = empLname;
+            EmpType = empType;
+        }
+
+        public string PrintEmployee()
+        {
+            return ("Employee Number: " + EmpNum +
+                    "\nEmployee Name: " + EmpFname + " " + EmpLname +
+                    "\nEmployee Type: " + EmpType);
+        }
+
     }
 }
