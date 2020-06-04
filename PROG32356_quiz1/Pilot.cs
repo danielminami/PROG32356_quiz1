@@ -2,35 +2,26 @@
 {
     public class Pilot : Employee
     {
-        private string pil_license;
-        private string pil_ratings;
+        public Pilot(){ }
 
-        public Pilot(long empNum, string empFname, string empLname, string empType,
-            string license, string ratings) :
-            base(empNum, empFname, empLname, empType) //this properties belong to the base class
+        public Pilot(long number, string firstName, string lastName,
+            string type, string license, string ratings) :
+            base(number, firstName, lastName, type) //this properties belong to the base class
         {
             //the following belong to this class
             License = license;
             Ratings = ratings;
         }
 
-        public string License
-        {
-            get => pil_license;
-            set => pil_license = value;
-        }
-        public string Ratings
-        {
-            get => pil_ratings;
-            set => pil_ratings = value;
-        }
+        public string License { get; set; }
+        public string Ratings { get; set; }
 
-        //@override
+        //@overriding base method
         public override string PrintEmployee()
         {
-            return (base.PrintEmployee() + "\n Pilot License: " + pil_license +
-                "\n Pilot Ratings: " + pil_license);
+            return $"{base.PrintEmployee()}" +
+                $"\n Pilot License: {License}" +
+                $"\n Pilot Ratings: {Ratings}";
         }
-
     }
 }

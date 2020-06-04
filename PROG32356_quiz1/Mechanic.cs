@@ -2,26 +2,25 @@
 {
     public class Mechanic : Employee
     {
-
-        public string MecTitle { get => MecTitle; set => MecTitle = value; }
-        public string MecCert { get => MecCert; set => MecCert = value; }
-
-        public Mechanic(long empNum, string empFname, string empLname,
-            string empType, string mecTitle, string mecCert) :
-            base(empNum, empFname, empLname, empType) //this properties belong to the base class
+        public Mechanic() { }
+        public Mechanic(long number, string firstName, string lastName,
+            string type, string title, string certification) :
+            base(number, firstName, lastName, type) //this properties belong to base class
         {
             //the following belong to this class
-            MecTitle = mecTitle;
-            MecCert = mecCert;
+            Title = title;
+            Certification = certification;
         }
 
-        //@override
+        public string Title { get; set; }
+        public string Certification { get; set; }
+
+        //@overriding base method
         public override string PrintEmployee()
         {
-            return (base.PrintEmployee() + "\nMechanic Title: " + MecTitle +
-                "\nMechanic Certification: " + MecCert);
+            return $"{base.PrintEmployee()}" +
+                    $"\nMechanic Title: {Title}" +
+                    $"\nMechanic Certification: {Certification}";
         }
-
     }
-
 }
