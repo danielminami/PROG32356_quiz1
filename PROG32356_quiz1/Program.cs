@@ -9,74 +9,37 @@ namespace InheritanceApp
 {
     class Program
     {
-        /// <summary>
-        /// This is the entry point into the application
-        /// </summary>
-        static void Main()
+        static List<Employee> employees = new List<Employee>();
+
+        static void Main(string[] args)
         {
-            // This loop allows users to enter options until they choose to exit the program
-            do
-            {
-                Console.Clear();
 
-                Console.WriteLine("----- EMPLOYEES LIST APPLICATION -----");
-                Console.WriteLine("Enter one of the following employees typing " +
-                    "only the capital letter\n" +
-                    "(A)ccountant / (M)echanic / (P)ilot): ");
-                string employeeType = Console.ReadLine();
+            MockData();
 
-                Employee EmployeeType = FillEmployeeTypeData(employeeType);
+            Console.WriteLine("----- EMPLOYEES LIST APPLICATION -----");
+            Console.WriteLine("Enter the letter to visualize the employees per category: ");
+            // We do more stuff here
 
-                if (EmployeeType != null)
-                {
-                    Console.WriteLine($"\n{ EmployeeType.PrintEmployee()}");
-                }
-                else
-                {
-                    Console.WriteLine($"\nYou have entered an invalid employee.");
-                }
 
-                Thread.Sleep(4000);
-
-                Console.WriteLine("\nEnter \"y\" to make another operation or any to exit.");
-            } while (Console.ReadLine() == "y");
-        }
-
-        static Employee FillEmployeeTypeData(string employeeType)
-        {
-            Employee EmployeeType = null;
-
-            if (!string.IsNullOrEmpty(employeeType))
-            {
-                //Common properties for all employees
-                long number = 1;
-                string firstName = "John";
-                string lastName = "Doe";
-                string type = employeeType;
-
-                switch (employeeType)
-                {
-                    case "A":
-                        string accTitle = "Clerk";
-                        string licenseType = "Audit License";
-                        EmployeeType = new Accountant(number, firstName, lastName
-                            , type, accTitle, licenseType);
-                        break;
-                    case "M":
-                        string title = "Track Mechanic";
-                        string certification = "BMW Certification";
-                        EmployeeType = new Mechanic(number, firstName, lastName
-                            , type, title, certification);
-                        break;
-                    case "P":
-                        string license = "PRO";
-                        string ratings = "100";
-                        EmployeeType = new Mechanic(number, firstName, lastName
-                            , type, license, ratings);
-                        break;
+            foreach (Employee emp in employees) {
+                if (emp is Mechanic) {
+                    Mechanic m = (Mechanic)emp;
+                    Console.WriteLine(m.PrintEmployee());
                 }
             }
-            return EmployeeType;
+
+            Thread.Sleep(4000);
+
         }
+
+        static void MockData() {
+            Mechanic m1 = new Mechanic(298301, "Robert", "DeNiro", "Full Time", "Automobile Mechanic", "BMW Certification");
+
+            employees.Add(m1);
+
+
+        }
+
     }
 }
+
