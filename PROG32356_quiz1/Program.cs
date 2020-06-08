@@ -14,7 +14,7 @@ namespace InheritanceApp
         /// </summary>
         static void Main()
         {
-            // This loop allows users to execute calculations until they choose to exit the program
+            // This loop allows users to enter options until they choose to exit the program
             do
             {
                 Console.Clear();
@@ -25,7 +25,7 @@ namespace InheritanceApp
                     "(A)ccountant / (M)echanic / (P)ilot): ");
                 string employeeType = Console.ReadLine();
 
-                Employee EmployeeType = FilledEmployeeTypeData(employeeType);
+                Employee EmployeeType = FillEmployeeTypeData(employeeType);
 
                 if (EmployeeType != null)
                 {
@@ -42,7 +42,7 @@ namespace InheritanceApp
             } while (Console.ReadLine() == "y");
         }
 
-        static Employee FilledEmployeeTypeData(string employeeType)
+        static Employee FillEmployeeTypeData(string employeeType)
         {
             Employee EmployeeType = null;
 
