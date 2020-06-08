@@ -47,8 +47,6 @@ namespace InheritanceApp
                     Console.WriteLine($"\nYou have entered an invalid employee.");
                 }
 
-                Thread.Sleep(4000);
-
                 Console.WriteLine("\nEnter \"y\" to make another operation or any to exit.");
             } while (Console.ReadLine() == "y");
 
