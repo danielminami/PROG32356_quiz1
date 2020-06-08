@@ -54,7 +54,7 @@ namespace InheritanceApp
         }
 
         static void MockData()
-        {//should i change the names here ??? 
+        {
             employees = new List<Employee>() {
                 new Accountant(298301, "Robert", "DeNiro", "Full Time", "Clerk", "Audit License"),
                 new Mechanic(298302, "Paul", "Sams", "Part Time", "Automobile Mechanic", "BMW Certification"),
