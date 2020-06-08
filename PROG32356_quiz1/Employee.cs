@@ -1,4 +1,6 @@
-﻿namespace InheritanceApp
+﻿using System;
+
+namespace InheritanceApp
 {
     public class Employee
     {
